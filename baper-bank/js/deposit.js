@@ -6,6 +6,12 @@ document.getElementById('btn-deposit').addEventListener('click', function(){
     const depositField = document.getElementById('deposit-field');
     const newDepositAmountString = depositField.value ;
     const newDepositAmount = parseFloat(newDepositAmountString);
+    // clear the deposit field
+    depositField.value = '';
+    if(isNaN(newDepositAmount)){
+        alert('Please provide a valid number');
+        return;
+    }
     
     // step-3 : get the current deposit total
     // for non-input(element other than input, textarea) usr innerText to get the text
